@@ -19,7 +19,6 @@ class ImageCaptioner:
         image = Image.open(io.BytesIO(image_bytes))
         result = self.caption_pipeline(image)
         caption = result[0]['generated_text']
-        # logger.info(f"Generated Caption: {caption}")
         return caption
     
     def generate_captions_batch(self, files):
