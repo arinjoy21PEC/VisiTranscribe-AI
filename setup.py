@@ -15,6 +15,7 @@ setup(
         "python-multipart",
         "pydub",
         "openai-whisper",
-        "tqdm"
+        "tqdm",
+        "sentencepiece"
     ],
 )
