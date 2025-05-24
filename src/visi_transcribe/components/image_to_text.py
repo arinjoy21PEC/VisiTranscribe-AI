@@ -2,7 +2,7 @@ from transformers import pipeline
 from PIL import Image
 import io
 
-class IamageCaptioner:
+class ImageCaptioner:
     def __init__(self, model_name):
         self.caption_pipeline = pipeline("image-to-text", model=model_name)
 
