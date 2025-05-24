@@ -1,1 +1,4 @@
- 
+image_captioning_model: nlpconnect/vit-gpt2-image-captioning
+translation_model: facebook/m2m100_418M
+
+
