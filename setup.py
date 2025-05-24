@@ -14,6 +14,7 @@ setup(
         "pillow",
         "python-multipart",
         "pydub",
-        "openai-whisper"
+        "openai-whisper",
+        "tqdm"
     ],
 )
