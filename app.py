@@ -4,7 +4,12 @@ from src.visi_transcribe.pipelines.translation_pipeline import run_translator
 from typing import List, Optional
 import yaml
 
-app = FastAPI()
+from src.visi_transcribe.routes.vqa_routes import router as vqa_router
+
+app = FastAPI(
+    title="VisiTranscribe-AI",
+    version="1.0"
+)
 
 with open("params.yaml", "r") as file:
     params = yaml.safe_load(file)
@@ -23,3 +28,5 @@ async def translate(texts: List[str], target_lang: Optional[str] = None):
         params['language_detection_model']
     )
     return {"translated_text": translations}
+
+app.include_router(vqa_router, prefix="/api", tags=["Visual Question Answering"])
