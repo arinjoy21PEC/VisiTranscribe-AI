@@ -9,3 +9,4 @@ pydub
 openai-whisper
 tqdm
 sentencepiece
+-e .
