@@ -1,7 +1,7 @@
 from fastapi import FastAPI, UploadFile, File
 from src.visi_transcribe.pipelines.image_captioning_pipeline import run_image_captioning
 from src.visi_transcribe.pipelines.translation_pipeline import run_translator
-from typing import List
+from typing import List, Optional
 import yaml
 
 app = FastAPI()
@@ -15,10 +15,11 @@ async def image_to_text(files: List[UploadFile] = File(...)):
     return {"results": results}
 
 @app.post("/translate/")
-async def translate(text: str, target_lang: str):
-    translation = run_translator(
-        text,
+async def translate(texts: List[str], target_lang: Optional[str] = None):
+    translations = run_translator(
+        texts,
         target_lang,
-        params['translation_model']
+        params['translation_model'],
+        params['language_detection_model']
     )
-    return {"translated_text": translation}
+    return {"translated_text": translations}

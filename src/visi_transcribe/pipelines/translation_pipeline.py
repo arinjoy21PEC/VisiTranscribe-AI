@@ -1,5 +1,5 @@
 from src.visi_transcribe.components.translator import Translator
 
-def run_translator(text, target_lang, model_name):
-    translator = Translator(model_name)
-    return translator.translate(text, target_lang)
+def run_translator(texts, target_lang, model_name, language_detection_model):
+    translator = Translator(model_name, language_detection_model)
+    return translator.translate(texts, target_lang)
