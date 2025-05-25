@@ -1,5 +1,6 @@
 image_captioning_model: nlpconnect/vit-gpt2-image-captioning
 translation_model: facebook/m2m100_418M
 language_detection_model: "papluca/xlm-roberta-base-language-detection"
+VQA_Model: "Salesforce/blip2-flan-t5-xl"
 
 
